@@ -24,7 +24,7 @@ void ofApp::simplifyPolys() {
 		poly.clear();	// clear poly
 		poly.addVertices(contourFinder.blobs[i].pts);	// add all points from blob to poly
 		poly.simplify(polySimplifyAmount); // simplify poly straight(ish) lines
-		for(auto pt : poly) mesh.addVertex(pt); // loop points on simplified poly and add to mesh
+		mesh.addVertices(poly.getVertices()); // add all points from simplified poly to mesh
 	}
 }
 
